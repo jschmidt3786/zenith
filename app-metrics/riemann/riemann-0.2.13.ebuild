@@ -36,10 +36,24 @@ pkg_setup() {
 
 src_unpack() {}
 src_prepare() {}
-src_configure() {}
-src_compile() {}
+src_configure() {
+	#econf
+}
+src_compile() {
+	#emake
+}
 src_test() {}
-src_install() {}
+src_install() {
+	#emake DESTDIR="${D}" install
+	#einstall
+	dosbin bin/riemann
+	dolib lib/riemann.jar #not really a "lib"
+	doinitd # need an init.d/
+	doconfd # have a /etc/{default,sysconfig}/
+	doenvd # probably don't need...
+	insinto /etc/riemann
+	newins etc/riemann.config riemann.config
+}
 pkg_preinst() {}
 pkg_postinst() {}
 
