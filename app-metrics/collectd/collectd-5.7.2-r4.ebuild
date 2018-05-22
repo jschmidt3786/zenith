@@ -16,7 +16,7 @@ SRC_URI="${HOMEPAGE%/}/files/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="alpha amd64 arm x86"
-IUSE="contrib debug java kernel_Darwin kernel_FreeBSD kernel_linux perl selinux static-libs udev xfs"
+IUSE="contrib debug java kernel_Darwin kernel_FreeBSD kernel_linux perl riemann selinux static-libs udev xfs"
 
 # The plugin lists have to follow here since they extend IUSE
 
@@ -128,7 +128,7 @@ COMMON_DEPEND="
 	collectd_plugins_write_prometheus?	( >=dev-libs/protobuf-c-1.2.1-r1:= net-libs/libmicrohttpd:= )
 	collectd_plugins_write_redis?		( dev-libs/hiredis:= )
 	collectd_plugins_xencpu?		( app-emulation/xen-tools:= )
-	collectd_plugins_write_riemann?	( dev-libs/protobuf-c:= )
+	collectd_plugins_write_riemann?	( dev-libs/protobuf-c:= app-metrics/riemann-c-client:= )
 
 	kernel_FreeBSD? (
 		collectd_plugins_disk?		( sys-libs/libstatgrab:= )
