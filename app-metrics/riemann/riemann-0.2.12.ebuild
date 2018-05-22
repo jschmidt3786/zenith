@@ -46,8 +46,9 @@ RDEPEND="${DEPEND}"
 src_install() {
 	#emake DESTDIR="${D}" install
 	#einstall
-	dosbin bin/riemann
-	dolib lib/riemann.jar #not really a "lib"
+	dosbin bin/${PN}
+	insinto /usr/share/${PV}
+	newins lib/${PN}.jar ${PN}.jar
 	doinitd # need an init.d/
 	doconfd # have a /etc/{default,sysconfig}/
 	doenvd # probably don't need...
