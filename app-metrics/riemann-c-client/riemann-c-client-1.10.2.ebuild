@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-#inherit cmake-utils git-r3 eutils
 inherit git-r3 eutils
 
 DESCRIPTION="a C client library for Riemann"
@@ -10,7 +9,7 @@ HOMEPAGE="https://github.com/algernon/riemann-c-client"
 EGIT_REPO_URI="https://github.com/algernon/riemann-c-client.git"
 EGIT_COMMIT="${P}"
 
-LICENSE="GPL-2+"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="json tls"
