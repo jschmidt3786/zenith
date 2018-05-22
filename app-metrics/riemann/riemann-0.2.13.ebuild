@@ -30,19 +30,19 @@ RDEPEND="${DEPEND}"
 
 # TODO: create user, create init script, modify startup shell script, put .jar, .config, and startup in place
 
-pkg_setup() {
-	riemann_create_users
-}
+#pkg_setup() {
+#	riemann_create_users
+#}
 
-src_unpack() {}
-src_prepare() {}
-src_configure() {
+#src_unpack() {}
+#src_prepare() {}
+#src_configure() {
 	#econf
-}
-src_compile() {
+#}
+#src_compile() {
 	#emake
-}
-src_test() {}
+#}
+#src_test() {}
 src_install() {
 	#emake DESTDIR="${D}" install
 	#einstall
@@ -54,7 +54,7 @@ src_install() {
 	insinto /etc/riemann
 	newins etc/riemann.config riemann.config
 }
-pkg_preinst() {}
-pkg_postinst() {}
+#pkg_preinst() {}
+#pkg_postinst() {}
 
-pkg_config() {}
+#pkg_config() {}
