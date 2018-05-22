@@ -25,3 +25,22 @@ DEPEND="
 		dev-java/icedtea-bin
 "
 RDEPEND="${DEPEND}"
+
+# pkg_setup, src_unpack, src_prepare, src_configure, src_compile, src_test (optional, FEATURES="test"), src_install, pkg_preinst, pkg_postinst
+
+# TODO: create user, create init script, modify startup shell script, put .jar, .config, and startup in place
+
+pkg_setup() {
+	riemann_create_users
+}
+
+src_unpack() {}
+src_prepare() {}
+src_configure() {}
+src_compile() {}
+src_test() {}
+src_install() {}
+pkg_preinst() {}
+pkg_postinst() {}
+
+pkg_config() {}
