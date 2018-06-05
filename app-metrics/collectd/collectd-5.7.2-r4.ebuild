@@ -41,7 +41,6 @@ IUSE="contrib debug java kernel_Darwin kernel_FreeBSD kernel_linux perl riemann 
 COLLECTD_IMPOSSIBLE_PLUGINS="apple_sensors aquaero barometer dpdkstat grpc
 	intel_rdt lpar mic netapp pf pinba tape write_mongodb xmms zone"
 
-
 # Plugins that have been (compile) tested and can be enabled via COLLECTD_PLUGINS
 COLLECTD_TESTED_PLUGINS="aggregation amqp apache apcups ascent battery bind
 	ceph cgroups chrony conntrack contextswitch cpu cpufreq cpusleep

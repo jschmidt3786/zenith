@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>jeff.schmidt@zenith.com</email>
+		<name>Jeff Schmidt</name>
+		<description>riemann c client</description>
+	</maintainer>
+	<longdescription>a C client library for Riemann</longdescription>
+	<use>
+      <flag name="tls">Support for TLS via gnutls.</flag>
+      <flag name="json">Support for JSON.</flag>
+    </use>
+</pkgmetadata>

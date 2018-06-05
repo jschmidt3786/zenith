@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>jeff.schmidt@zenith.com</email>
+		<name>Jeff Schmidt</name>
+		<description>Riemann monitors distributed systems</description>
+	</maintainer>
+	<longdescription>Riemann aggregates events from your servers and applications with a powerful stream processing language. Send an email for every exception in your app. Track the latency distribution of your web app. See the top processes on any host, by memory and CPU. Combine statistics from every Riak node in your cluster and forward to Graphite. Track user activity from second to second.</longdescription>
+</pkgmetadata>

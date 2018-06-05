@@ -1,0 +1,4 @@
+app-metrics/riemann-c-client:json - Support json as a configuration file format.
+app-metrics/riemann-c-client:tls - Support TLS via gnutls.
+app-metrics/collectd:riemann - Support the write_riemann plugin.
+app-metrics/collectd:collectd_plugins_write_riemann - Support the write_riemann plugin.
