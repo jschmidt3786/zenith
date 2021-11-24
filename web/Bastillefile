@@ -1,0 +1,13 @@
+INCLUDE procentric/base
+PKG www/nginx
+
+# lots in here: self-signed cert, vhosts, nginx sudoers (yuck!)
+cp usr /
+
+SYSRC nginx_enable="YES"
+SERVICE nginx start
+
+RDR tcp 80 80
+RDR tcp 443 443
+RDR tcp 8070 8070
+RDR tcp 8888 8888

@@ -1,0 +1,8 @@
+PKG vim textproc/bat sysutils/ccze textproc/colordiff sysutils/exa sysutils/ncdu security/pam_ssh_agent_auth security/sudo sysutils/tree shells/zsh
+
+#CP root /
+CP etc /
+CP usr /
+
+CMD /usr/bin/chsh -s zsh
+

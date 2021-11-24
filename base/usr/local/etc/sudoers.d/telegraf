@@ -1,0 +1,3 @@
+Cmnd_Alias PFCTL = /sbin/pfctl
+Defaults!PFCTL !syslog
+telegraf ALL=(ALL) NOPASSWD: PFCTL

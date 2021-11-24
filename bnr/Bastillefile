@@ -1,0 +1,5 @@
+INCLUDE procentric/base
+PKG php80 php80-gd php80-mbstring php80-pdo php80-opcache php80-pecl-ssh2 php80-pecl-xdebug php80-xml php80-zip php80-composer2 php80-curl php80-sockets php80-dom php80-xmlwriter node npm
+SERVICE php-fpm enable
+SERVICE php-fpm start
+RDR tcp 9000 9000

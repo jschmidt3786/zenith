@@ -1,0 +1,4 @@
+Cmnd_Alias PCSTOOLS = /usr/pcstools/uni_or_multicast.sh, /bin/rm
+Cmnd_Alias ANSIBLE  = /usr/local/bin/ansible
+
+nginx ALL=(ALL) NOPASSWD: PCSTOOLS, ANSIBLE

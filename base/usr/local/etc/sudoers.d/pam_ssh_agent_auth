@@ -1,0 +1,1 @@
+Defaults env_keep += "SSH_CLIENT SSH_CONNECTION SSH_TTY SSH_AUTH_SOCK",timestamp_timeout=0

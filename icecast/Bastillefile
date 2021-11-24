@@ -1,0 +1,19 @@
+INCLUDE procentric/base
+PKG multimedia/gstreamer1-plugins multimedia/gstreamer1-plugins-good multimedia/gstreamer1-plugins-bad multimedia/gstreamer1-plugins-ugly audio/gstreamer1-plugins-a52dec audio/gstreamer1-plugins-lame audio/gstreamer1-plugins-shout2 audio/icecast misc/mime-support
+
+CMD pw groupadd -n icecast -g 8000
+CMD pw useradd icecast -c "Icecast Server" -g icecast -s sh -m -L daemon -u 8000
+#CMD pw groupadd -n portal -g 10000 -M icecast
+
+CMD mkdir /var/log/icecast
+CMD chown icecast:icecast /var/log/icecast
+
+# finicky...
+CMD ln -s /usr/local/etc/mime.types /etc/mime.types
+
+# icecast config
+CP usr /
+
+SYSRC icecast_enable="YES"
+SERVICE icecast start
+RDR tcp 8000 8000
