@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #set -o
 DATE=$(date +%s)
 cd ~/.ssh/

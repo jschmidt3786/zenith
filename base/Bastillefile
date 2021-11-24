@@ -5,4 +5,5 @@ CP etc /
 CP usr /
 
 CMD /usr/bin/chsh -s zsh
+CMD mkdir -m 0700 ${HOME}/.ssh
 
