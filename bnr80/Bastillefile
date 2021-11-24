@@ -1,0 +1,30 @@
+INCLUDE procentric/base
+
+PKG php80 php80-gd php80-mbstring php80-pdo php80-opcache php80-pecl-ssh2 php80-pecl-xdebug php80-xml php80-zip php80-composer2 php80-curl php80-sockets php80-dom php80-xmlwriter php80-pear-PHP_CodeCoverage php80-aphpunit phpunit9-php80 php80-tokenizer node npm
+
+
+CMD mkdir -p /usr/local/www
+
+#fetch -o /usr/local/www/bnr-api-develop.tar.gz "http://gitlab105.zenith.net/procentric/bnr-api/-/archive/develop/bnr-api-develop.tar.gz"
+# or
+#fetch -o /usr/local/www/bnr-api-develop.tar.gz "http://gitlab105.zenith.net/api/v4/projects/26/repository/archive?private_token=rK3Gw3TY2FBVVWyP_j8F"
+#tar xzf /usr/local/www/bnr-api-develop.tar.gz -C /usr/local/www/
+#chown -R www:www /usr/local/www/bnr*
+#cd /usr/local/www/bnr-api/src
+#sudo -u www composer update
+#sudo -u www composer install
+
+#fetch -o /usr/local/www/bnr-ui-develop.tar.gz  "http://gitlab105.zenith.net/procentric/bnr-ui/-/archive/develop/bnr-ui-develop.tar.gz"
+# or
+#fetch -o /usr/local/www/bnr-ui-develop.tar.gz  "http://gitlab105.zenith.net/api/v4/projects/28/repository/archive?private_token=rK3Gw3TY2FBVVWyP_j8F"
+#tar xzf /usr/local/www/bnr-ui-develop.tar.gz -C /usr/local/www/
+#cd /usr/local/www/bnr-ui/src
+#sudo -u www composer update
+#sudo -u www composer install
+#npm...
+
+
+SERVICE php-fpm enable
+SERVICE php-fpm start
+
+RDR tcp 9000 9000
