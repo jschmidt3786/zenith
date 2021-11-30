@@ -1,9 +1,10 @@
 INCLUDE procentric/base
-PKG databases/mariadb105-client databases/mariadb105-server converters/base64
+#PKG databases/mariadb105-client databases/mariadb105-server converters/base64
+PKG databases/mariadb105-client databases/mariadb105-server
 SYSRC mysql_enable="YES"
 SERVICE mysql-server start
 
-# (random) password setup?
+# (random) password setup? if so, add base64 (above)
 #CP root /
 #CMD RPASSWD=$(date +%s | sha256 | base64 | head -c 32) ; export $RPASSWD
 #echo -n "$RPASSWD" >> /root/.my.cnf
