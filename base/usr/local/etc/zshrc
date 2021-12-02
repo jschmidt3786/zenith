@@ -74,8 +74,10 @@ if [ -f "${SSH_ENV}" ]; then
   #source "${SSH_ENV}" > /dev/null
   source "${SSH_ENV}"
 else
-  bsdinfo
   start_agent;
+  if [ -e /usr/local/bin/bsdinfo ]; then
+    bsdinfo
+  fi
 fi
 ###   ssh-agent setup   ###
 
@@ -84,16 +86,16 @@ fi
 #alias ls='exa --color=never'
 if [ -e /usr/local/bin/exa ]; then
   alias ls='exa --color=auto --links --sort Name'
+  alias lf='la -h -s modified'
+  alias lS='la -h -s size'
+  alias ld='la -D'
 else
   alias ls='ls --color=auto'
+  alias lf='la -hrt' # for ls
+  alias lS='la -hrS' # for ls
 fi
 alias ll='ls -lgF'
 alias la='ll -a'
-#alias lf='la -hrt' # for ls
-alias lf='la -h -s modified'
-#alias lS='la -hrS' # for ls
-alias lS='la -h -s size'
-alias ld='la -D'
 alias l.='la -d .[a-zA-Z0-9]*'
 
 alias cp='cp -v'
