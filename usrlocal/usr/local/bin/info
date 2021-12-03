@@ -1,0 +1,29 @@
+#!/bin/sh
+FEAT=lan0
+CTRL=lan1
+STRM=lan2
+
+[ -f /etc/issue ] && cat /etc/issue
+#echo Copyright © 2021 LG Electronics U.S.A, Inc.
+echo © 2021 LG Electronics U.S.A, Inc.
+echo
+
+echo SN: "          " TODO
+echo HostID: "      " `cat /etc/hostid`
+echo OS version: "  " `freebsd-version`
+echo Control MAC: " " `ifconfig $CTRL | grep ether | cut -w -f 3`
+echo Control IP: "  " `ifconfig $CTRL | grep "inet " | cut -w -f 3`
+echo Control IPv6: "" `ifconfig $CTRL | grep inet6 | cut -w -f 3`
+echo Feature MAC: " " `ifconfig $FEAT | grep ether | cut -w -f 3`
+echo Feature IP: "  " `ifconfig $FEAT | grep "inet " | cut -w -f 3`
+echo Feature IPv6: "" `ifconfig $FEAT | grep inet6 | cut -w -f 3`
+echo Stream MAC: "  " `ifconfig $STRM | grep ether | cut -w -f 3`
+echo Stream IP: "   " `ifconfig $STRM | grep "inet " | cut -w -f 3`
+echo Stream IPv6: " " `ifconfig $STRM | grep inet6 | cut -w -f 3`
+if ifconfig |grep -q tun0 ; then
+  echo VPN IP: "      " `ifconfig tun0 | grep "inet " | cut -w -f 3`
+fi
+echo Multicast: "   " TODO
+echo Local time: `date`
+echo
+sudo bastille list -a |sort -t. -k4 |awk '{print $1 " " $3 " " $2}' |column -t

@@ -1,0 +1,24 @@
+#
+# $FreeBSD: branches/2021Q1/security/sudo/files/pam.conf 340872 2014-01-24 00:14:07Z mat $
+#
+# PAM configuration for the "sudo" service
+#
+
+# auth
+#auth	include		system
+# check for yubikey C/R, then check for ssh key in ssh-agent, then fallback to password
+#auth	sufficient	pam_yubico.so				  mode=challenge-response debug_file=/var/log/yubikey.log chalresp_path=/var/yubikey
+auth	sufficient	pam_ssh_agent_auth.so	file=~/.ssh/authorized_keys
+auth	sufficient	pam_unix.so				    auth_as_self nullok
+auth	required	pam_deny.so
+
+# account
+account		include		system
+
+# session
+# XXX: pam_lastlog (used in system) causes users to appear as though
+# they are no longer logged in in system logs.
+session		required	pam_permit.so
+
+# password
+#password	include		system
