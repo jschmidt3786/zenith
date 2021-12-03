@@ -1,4 +1,4 @@
-INCLUDE procentric/base
+INCLUDE zenith/base
 PKG multimedia/gstreamer1-plugins multimedia/gstreamer1-plugins-good multimedia/gstreamer1-plugins-bad multimedia/gstreamer1-plugins-ugly audio/gstreamer1-plugins-a52dec audio/gstreamer1-plugins-lame audio/gstreamer1-plugins-shout2 audio/icecast misc/mime-support
 
 CMD pw groupadd -n icecast -g 8000

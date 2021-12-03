@@ -1,4 +1,4 @@
-INCLUDE procentric/base
+INCLUDE zenith/base
 PKG www/nginx
 
 # lots in here: self-signed cert, vhosts, nginx sudoers (yuck!)
