@@ -1,18 +1,10 @@
-# additional packages for base install
+# additional packages for the host install
 # /usr/local/ and /var/cache/pkg/ are turned into a
 # 'local.txz' distribution set.
 
-#PKG sysutils/bastille sysutils/ccze textproc/colordiff devel/git sysutils/htop misc/mc sysutils/ncdu sysutils/tree editors/vim shells/zsh
-PKG sysutils/bastille textproc/bat sysutils/ccze textproc/colordiff sysutils/ethname sysutils/exa sysutils/exfat-utils sysutils/fusefs-exfat sysutils/fusefs-ntfs sysutils/htop misc/mc sysutils/ncdu security/openvpn security/pam_ssh_agent_auth net/py-magic-wormhole security/sudo sysutils/tmux sysutils/tree shells/zsh
+PKG sysutils/automount sysutils/bastille textproc/bat sysutils/ccze textproc/colordiff sysutils/ethname sysutils/exa sysutils/exfat-utils sysutils/fusefs-exfat sysutils/fusefs-ntfs sysutils/htop misc/mc sysutils/ncdu security/openvpn security/pam_ssh_agent_auth net/py-magic-wormhole security/sudo sysutils/tmux sysutils/tree shells/zsh
 
 # config /usr/local/etc/*
 # * pkg bastille htop pam sudo tmux zsh automount
-#TODO: don't forget to remove the /root/...htop from intallerconfig
 CP usr /
 
-# disable upstream repo updates while we install a locally cached 'automount' package
-#echo "REPO_AUTOUPDATE = false;" >> /usr/local/etc/pkg.conf
-#CP var /
-PKG sysutils/automount
-#CMD pkg clean
-#sed -i '' '/^REPO_AUTOUPDATE/d'  /usr/local/etc/pkg.conf

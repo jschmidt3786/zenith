@@ -1,4 +1,4 @@
-INCLUDE zenith/base
+INCLUDE zenith/basejail
 #PKG databases/mariadb105-client databases/mariadb105-server converters/base64
 PKG databases/mariadb105-client databases/mariadb105-server
 SYSRC mysql_enable="YES"
