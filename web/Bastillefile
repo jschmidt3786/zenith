@@ -1,4 +1,4 @@
-INCLUDE zenith/base
+INCLUDE zenith/basejail
 PKG www/nginx
 
 # lots in here: self-signed cert, vhosts, nginx sudoers (yuck!)
