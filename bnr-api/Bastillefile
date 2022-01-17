@@ -1,6 +1,6 @@
 INCLUDE zenith/basejail
 
-PKG php80 php80-gd php80-mbstring php80-pdo php80-opcache php80-pecl-ssh2 php80-pecl-xdebug php80-xml php80-zip php80-composer2 php80-curl php80-sockets php80-dom php80-xmlwriter php80-pear-PHP_CodeCoverage php80-aphpunit phpunit9-php80 php80-tokenizer
+PKG php80 php80-gd php80-mbstring php80-pdo php80-opcache php80-pecl-ssh2 php80-pecl-xdebug php80-xml php80-zip php80-composer2 php80-curl php80-sockets php80-dom php80-xmlwriter php80-pear-PHP_CodeCoverage php80-aphpunit phpunit9-php80 php80-tokenizer php80-fileinfo
 
 
 CMD mkdir -p /usr/local/www
