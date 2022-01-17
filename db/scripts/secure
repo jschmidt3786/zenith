@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# (default) no root password set
+# (no) do not switch to unix_socket authentication
+# (no) do not change the root password
+# (default) remove anonymous users
+# (default) disallow root login remotely
+# (default) remove test database and access to it
+# (default) reload privilege tables now
+
+mariadb-secure-installation << 'EOF'
+
+n
+n
+
+
+
+
+EOF
+

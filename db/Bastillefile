@@ -1,23 +1,17 @@
 INCLUDE zenith/basejail
-#PKG databases/mariadb105-client databases/mariadb105-server converters/base64
-PKG databases/mariadb105-client databases/mariadb105-server
+PKG databases/mariadb105-client databases/mariadb105-server converters/base64
+#PKG databases/mariadb105-client databases/mariadb105-server
 SYSRC mysql_enable="YES"
 SERVICE mysql-server start
 
-# (random) password setup? if so, add base64 (above)
-#CP root /
-#CMD RPASSWD=$(date +%s | sha256 | base64 | head -c 32) ; export $RPASSWD
-#echo -n "$RPASSWD" >> /root/.my.cnf
-#sed -i '' s:^rootpass=.*:rootpass=$RPASSWD: /usr/local/bin/mysql_secure_installation # TEST!
+# add scripts
+CP scripts/* /tmp/
 
-# secure
-CMD /usr/local/bin/mariadb -e "UPDATE mysql.global_priv SET priv=json_set(priv, '$.plugin', 'mysql_native_password', '$.authentication_string', PASSWORD('$esc_pass')) WHERE User='root';"
-CMD /usr/local/bin/mariadb -e "DELETE FROM mysql.global_priv WHERE User='';"
-CMD /usr/local/bin/mariadb -e "DELETE FROM mysql.global_priv WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');"
-CMD /usr/local/bin/mariadb -e "DROP DATABASE IF EXISTS test;"
-CMD /usr/local/bin/mariadb -e "DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%'"
-CMD /usr/local/bin/mariadb -e "FLUSH PRIVILEGES;"
-CMD /usr/local/bin/mariadb -e "UPDATE mysql.global_priv SET priv=json_set(priv, '$.password_last_changed', UNIX_TIMESTAMP(), '$.plugin', 'mysql_native_password', '$.authentication_string', 'invalid', '$.auth_or', json_array(json_object(), json_object('plugin', 'unix_socket'))) WHERE User='root';"
+# automated mariadb-secure-installation
+CMD /tmp/secure
+
+# add admin account for bnr
+CMD /tmp/accounts
 
 # schema...
 

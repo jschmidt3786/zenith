@@ -1,0 +1,27 @@
+#!/bin/sh
+ADMINPASS=$(date +%s | sha256 | base64 | head -c 32)
+sleep 2
+USERPASS=$(date +%s | sha256 | base64 | head -c 32)
+
+mariadb << EOF
+CREATE USER IF NOT EXISTS 'admin'@'localhost' identified by '$ADMINPASS';
+CREATE USER IF NOT EXISTS 'admin'@'10.20.30.4%' identified by '$ADMINPASS';
+CREATE USER IF NOT EXISTS 'bnr_user'@'10.20.30.4%' identified by '$USERPASS';
+
+CREATE DATABASE IF NOT EXISTS bnr; # build on this - came from Ricardo's doc (also see what ansible is up to)
+
+GRANT ALL PRIVILEGES ON bnr.* TO 'admin'@'localhost';
+GRANT ALL PRIVILEGES ON bnr.* TO 'admin'@'10.20.30.4%';
+GRANT INSERT, UPDATE, DELETE, INDEX ON bnr.* TO 'bnr_user'@'10.20.30.4%';
+EOF
+
+mariadb -e "select User, Host, Select_priv, Insert_priv, Update_priv, Delete_priv, Process_priv, Index_priv FROM mysql.user;"
+mariadb -e "select Db, User, Host, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, Drop_priv, Grant_priv, References_priv, Index_priv from mysql.db;"
+
+echo ADMINPASS="$ADMINPASS" > /var/procentric/db/credentials
+echo USERPASS="$USERPASS" >> /var/procentric/db/credentials
+cat /var/procentric/db/credentials
+
+echo "[client]
+user = admin" > /root/.my.cnf
+echo "password = " "$ADMINPASS" >> /root/.my.cnf
