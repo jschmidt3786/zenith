@@ -1,11 +1,11 @@
 INCLUDE zenith/basejail
 PKG databases/mariadb105-client databases/mariadb105-server converters/base64
-#PKG databases/mariadb105-client databases/mariadb105-server
 SYSRC mysql_enable="YES"
 SERVICE mysql-server start
 
 # add scripts
-CP scripts/* /tmp/
+CP scripts/accounts /tmp/
+CP scripts/secure /tmp/
 
 # automated mariadb-secure-installation
 CMD /tmp/secure
