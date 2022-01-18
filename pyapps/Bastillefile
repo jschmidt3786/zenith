@@ -2,9 +2,9 @@ INCLUDE zenith/basejail
 
 PKG tiff openjpeg freetype lcms2 webp tcl87 tk87 harfbuzz fribidi libraqm libimagequant libxcb python38 py38-virtualenv py38-pip py38-pycryptodome py38-requests py38-xmltodict py38-pillow py38-tkinter
 
-CMD pw groupadd -n dce -g XXX
-CMD pw useradd dce -c "(j)dce service" -g dce -s sh -m -L daemon -u XXX
-CMD pw groupadd -n portal -g 10000 -M dce
+#CMD pw groupadd -n dce -g XXX
+#CMD pw useradd dce -c "(j)dce service" -g dce -s sh -m -L daemon -u XXX
+#CMD pw groupadd -n portal -g 10000 -M dce
 # TODO: needs work here; for guidebuilder, dce, gem...
 
 # repo config for in-house pyapps packages (home/office/cloud)
