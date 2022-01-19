@@ -4,8 +4,8 @@ CTRL=lan1
 STRM=lan2
 
 [ -f /etc/issue ] && cat /etc/issue
-#echo Copyright © 2021 LG Electronics U.S.A, Inc.
-echo © 2021 LG Electronics U.S.A, Inc.
+#echo Copyright © 2022 LG Electronics U.S.A, Inc.
+echo © 2022 LG Electronics U.S.A, Inc.
 echo
 
 echo SN: "          " TODO

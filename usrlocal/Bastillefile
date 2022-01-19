@@ -1,8 +1,10 @@
 # additional packages for the host install
-# /usr/local/ and /var/cache/pkg/ are turned into a
+# /usr/local/ and /var/db/pkg/ are turned into a
 # 'local.txz' distribution set.
+# `tar -acvf ~/local.txz usr/local var/db/pkg`
+# ship to build host /poudriere/data/overlays/.../usr/freebsd-dist/
+# bake in sysutils/automount later with custom config
 
-#PKG sysutils/automount sysutils/bastille textproc/bat sysutils/ccze textproc/colordiff sysutils/ethname sysutils/exa sysutils/exfat-utils sysutils/fusefs-exfat sysutils/fusefs-ntfs sysutils/htop misc/mc sysutils/ncdu security/openvpn security/pam_ssh_agent_auth net/py-magic-wormhole security/sudo sysutils/tmux sysutils/tree shells/zsh
 PKG sysutils/bastille textproc/bat sysutils/ccze textproc/colordiff sysutils/ethname sysutils/exa sysutils/exfat-utils sysutils/fusefs-exfat sysutils/fusefs-ntfs sysutils/htop misc/mc sysutils/ncdu security/openvpn security/pam_ssh_agent_auth net/py-magic-wormhole security/sudo sysutils/tmux sysutils/tree shells/zsh
 
 # config /usr/local/etc/*
