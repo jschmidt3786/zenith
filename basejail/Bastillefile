@@ -1,5 +1,8 @@
 PKG security/pam_ssh_agent_auth security/sudo shells/zsh
 
+# good idea?
+SYSRC cron_enable="NO"
+
 #CP root /
 CP etc /
 CP usr /
