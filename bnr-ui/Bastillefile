@@ -1,4 +1,4 @@
 INCLUDE zenith/basejail
 
-PKG node npm yarn
+PKG www/node www/npm-node17 www/yarn-node17
 
