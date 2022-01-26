@@ -9,8 +9,10 @@ echo © 2022 LG Electronics U.S.A, Inc.
 echo
 
 echo SN: "          " TODO
-echo HostID: "      " `cat /etc/hostid`
-echo OS version: "  " `freebsd-version`
+echo HostID: "      " `cat /etc/hostid 2> /dev/null`
+echo OS Release: "  " `freebsd-version`
+echo Kernel Vers: " " `uname -imK`
+echo OS Version: "  " `uname -U`
 echo Control MAC: " " `ifconfig $CTRL | grep ether | cut -w -f 3`
 echo Control IP: "  " `ifconfig $CTRL | grep "inet " | cut -w -f 3`
 echo Control IPv6: "" `ifconfig $CTRL | grep inet6 | cut -w -f 3`
@@ -23,7 +25,7 @@ echo Stream IPv6: " " `ifconfig $STRM | grep inet6 | cut -w -f 3`
 if ifconfig |grep -q tun0 ; then
   echo VPN IP: "      " `ifconfig tun0 | grep "inet " | cut -w -f 3`
 fi
-echo Multicast: "   " TODO
+#echo Multicast: "   " TODO
 echo Local time: `date`
 echo
 sudo bastille list -a |sort -t. -k4 |awk '{print $1 " " $3 " " $2}' |column -t
