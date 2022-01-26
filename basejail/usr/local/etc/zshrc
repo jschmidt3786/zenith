@@ -50,7 +50,7 @@ export LSCOLORS="Exgxcxdxbxegedabagacad"
 export EXA_COLORS="da=36"
 
 export LESSHISTSIZE=0
-export IFCONFIG_FORMAT=inet:cidr
+export IFCONFIG_FORMAT="inet:dotted,inet6:cidr"
 export LOCATE_PATH=~/.locate.db
 
 # for sshpass and lame Linux hosts
