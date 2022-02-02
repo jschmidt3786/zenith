@@ -10,3 +10,5 @@ CP usr /
 CMD /usr/bin/chsh -s zsh
 CMD mkdir -m 0700 ${HOME}/.ssh
 
+MOUNT /var/procentric var/procentric nullfs rw 0 0
+MOUNT /var/procentric/upload var/procentric/upload nullfs rw 0 0
