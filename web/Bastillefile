@@ -8,6 +8,10 @@ CP usr /
 SYSRC nginx_enable="YES"
 SERVICE nginx start
 
+MOUNT /bastille/jails/bnr-api-prod/root/usr/local/www/bnr-api/src/public usr/local/www/bnr-api/src/public nullfs ro 0 0
+MOUNT /bastille/jails/bnr-api-prod/root/usr/local/www/unicast usr/local/www/unicast nullfs ro 0 0
+MOUNT /bastille/jails/bnr-ui-prod/root/usr/local/www/bnr-ui/dist usr/local/www/bnr-ui/dist nullfs ro 0 0
+
 RDR tcp 80 80
 RDR tcp 443 443
 RDR tcp 8070 8070
