@@ -2,7 +2,8 @@ INCLUDE zenith/basejail
 PKG www/nginx
 
 # lots in here: self-signed cert, vhosts, nginx sudoers (yuck!)
-cp usr /
+# and empty nullfs mountpoints for bnr-* static assets
+CP usr /
 
 SYSRC nginx_enable="YES"
 SERVICE nginx start
