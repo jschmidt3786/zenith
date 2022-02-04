@@ -17,4 +17,4 @@ CMD /tmp/accounts
 
 # seed...
 
-RDR tcp 3306 3306
+#RDR tcp 3306 3306
