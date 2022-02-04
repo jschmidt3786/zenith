@@ -1,4 +1,6 @@
 PKG security/pam_ssh_agent_auth security/sudo shells/zsh
+# and for dev work
+PKG git mc tree ncdu colordiff ccze vim htop
 
 # good idea?
 SYSRC cron_enable="NO"
