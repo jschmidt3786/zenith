@@ -3,3 +3,4 @@ INCLUDE zenith/basejail
 PKG www/node www/npm-node17 www/yarn-node17
 
 CMD mkdir -p /usr/local/www/bnr-ui/dist
+CMD mkdir -p /usr/local/www/bnr-ui/public
