@@ -1,4 +1,5 @@
-INCLUDE zenith/basejail
+#INCLUDE zenith/basejail
+#INCLUDE zenith/bnr-api
 PKG multimedia/gstreamer1-plugins multimedia/gstreamer1-plugins-good multimedia/gstreamer1-plugins-bad multimedia/gstreamer1-plugins-ugly audio/gstreamer1-plugins-a52dec audio/gstreamer1-plugins-lame audio/gstreamer1-plugins-shout2 audio/icecast misc/mime-support
 
 CMD pw groupadd -n icecast -g 8000
@@ -16,4 +17,4 @@ CP usr /
 
 SYSRC icecast_enable="YES"
 SERVICE icecast start
-RDR tcp 8000 8000
+#RDR tcp 8000 8000
