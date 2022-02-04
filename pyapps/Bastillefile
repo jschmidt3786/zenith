@@ -1,6 +1,6 @@
 INCLUDE zenith/basejail
 
-PKG tiff openjpeg freetype lcms2 webp tcl87 tk87 harfbuzz fribidi libraqm libimagequant libxcb python38 py38-virtualenv py38-pip py38-pycryptodome py38-requests py38-xmltodict py38-pillow py38-tkinter
+PKG graphics/tiff graphics/openjpeg print/freetype graphics/lcms2 graphics/webp lang/tcl87 x11-toolkits/tk87 print/harfbuzz converters/fribidi print/libraqm graphics/libimagequant x11/libxcb lang/python38 devel/py-virtualenv devel/py-pip security/py-pycryptodome www/py-requests devel/py-xmltodict graphics/py-pillow x11-toolkits/py-tkinter
 
 #CMD pw groupadd -n dce -g XXX
 #CMD pw useradd dce -c "(j)dce service" -g dce -s sh -m -L daemon -u XXX
