@@ -42,16 +42,20 @@ setopt TRANSIENT_RPROMPT
 
 setopt NO_SH_FILE_EXPANSION
 
+export BAT_STYLE="plain"
+#export BAT_THEME=""
 #LSCOLORS defaults:
 #LSCOLORS="exfxcxdxbxegedabagacad"
 # lighter blue for dirs, cyan symlinks
 export LSCOLORS="Exgxcxdxbxegedabagacad"
 # change timestamps from too-dark-blue to cyan
 export EXA_COLORS="da=36"
-
 export LESSHISTSIZE=0
+export LESS='-eiqFMRX --shift 5'
+#export IFCONFIG_FORMAT="inet:dotted,inet6:cidr,addr:fqdn"
 export IFCONFIG_FORMAT="inet:dotted,inet6:cidr"
-export LOCATE_PATH=~/.locate.db
+#export LOCATE_PATH=~/.locate.db
+#export LOCATE_PATH=/var/db/locate.database
 
 # for sshpass and lame Linux hosts
 export SSHPASS="r00tme"
@@ -76,6 +80,7 @@ if [ -f "${SSH_ENV}" ]; then
 else
   start_agent;
   if [ -e /usr/local/bin/bsdinfo ]; then
+    #clear
     bsdinfo
   fi
 fi
@@ -85,7 +90,7 @@ fi
 ######   aliases   ######
 #alias ls='exa --color=never'
 if [ -e /usr/local/bin/exa ]; then
-  alias ls='exa --color=auto --links --sort Name'
+  alias ls='exa --color=auto --links --sort Name --git'
   alias lf='la -h -s modified'
   alias lS='la -h -s size'
   alias ld='la -D'
@@ -154,23 +159,23 @@ if [ ! "$EUID" = "0" ]; then
     alias pkg='doas pkg'
     alias poweroff='rm ~/.ssh/environment ; doas poweroff'
     alias reboot='rm ~/.ssh/environment ; doas reboot'
-    alias service='doas service'
+    alias service='doas service't
     alias sysctl='doas sysctl'
     alias sysrc='doas sysrc'
     alias vm='doas vm'
   else
-    alias bastille='su -c bastille'
-    alias dma='su -c /usr/libexec/dma'
-    alias dmesg='su -c dmesg'
-    alias htop='su -c htop'
-    alias pfctl='su -c pfctl'
-    alias pkg='su -c pkg'
-    alias poweroff='rm ~/.ssh/environment ; su -c poweroff'
-    alias reboot='rm ~/.ssh/environment ; su -c reboot'
-    alias service='su -c service'
-    alias sysctl='su -c sysctl'
-    alias sysrc='su -c sysrc'
-    alias vm='su -c vm'
+    alias bastille='su root -c bastille'
+    alias dma='su root -c /usr/libexec/dma'
+    alias dmesg='su root -c dmesg'
+    alias htop='su root -c htop'
+    alias pfctl='su root -c pfctl'
+    alias pkg='su root -c pkg'
+    alias poweroff='rm ~/.ssh/environment ; su root -c poweroff'
+    alias reboot='rm ~/.ssh/environment ; su root -c reboot'
+    alias service='su root -c service'
+    alias sysctl='su root -c sysctl'
+    alias sysrc='su root -c sysrc'
+    alias vm='su root -c vm'
   fi
 fi
 #########################
