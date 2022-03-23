@@ -206,3 +206,9 @@ function unpwrline() {
   rm ~/.lesshst ~/.shell_prompt.sh ~/.tmuxline ~/.viminfo &>> /dev/null
   exit
 }
+
+if [ "$TERM_PROGRAM" = "tmux" ] || [ ! -z "$SSH_TTY" ]; then
+  PROMPT_COMMAND="printf '\033k$(hostname -s)\033\\';"${PROMPT_COMMAND}
+  precmd() { eval "$PROMPT_COMMAND" }
+fi
+
