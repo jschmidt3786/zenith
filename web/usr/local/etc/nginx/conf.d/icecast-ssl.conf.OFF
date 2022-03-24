@@ -53,7 +53,8 @@ server
 
   location /
   {
-    access_log /var/log/icecast/access_https.log icecast_combined;
+    access_log /var/log/nginx/icecast.log icecast_combined;
+    error_log  /var/log/nginx/icecast.log;
     proxy_pass http://127.0.0.1:8000/;
     proxy_redirect off;
     proxy_set_header Host $host;
