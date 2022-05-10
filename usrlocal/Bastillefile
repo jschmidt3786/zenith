@@ -5,7 +5,7 @@
 # ship to build host /poudriere/data/overlays/.../usr/freebsd-dist/
 # bake in sysutils/automount later with custom config
 
-PKG sysutils/bastille textproc/bat sysutils/ccze textproc/colordiff sysutils/ethname sysutils/exa sysutils/exfat-utils sysutils/fusefs-exfat sysutils/fusefs-ntfs sysutils/htop misc/mc sysutils/ncdu security/openvpn security/pam_ssh_agent_auth net/py-magic-wormhole security/sudo sysutils/tmux sysutils/tree shells/zsh
+PKG sysutils/bastille textproc/bat sysutils/ccze textproc/colordiff sysutils/ethname sysutils/exa sysutils/exfat-utils sysutils/fusefs-exfat sysutils/fusefs-ntfs sysutils/htop misc/mc sysutils/ncdu security/openvpn security/pam_ssh_agent_auth net/py-magic-wormhole security/sudo sysutils/tmate sysutils/tmux sysutils/tree shells/zsh
 
 # config /usr/local/etc/*
 # * pkg bastille htop pam sudo tmux zsh automount
